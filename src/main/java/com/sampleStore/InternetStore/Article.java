@@ -3,6 +3,7 @@ package com.sampleStore.InternetStore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Value;
 
 @Data
 @AllArgsConstructor
@@ -12,6 +13,4 @@ public class Article {
     private String name;
     private float price;
     private int quantity;
-
-
 }
