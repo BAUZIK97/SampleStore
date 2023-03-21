@@ -51,7 +51,6 @@ public class ArticleRepository {
     }
 
     public int delete(int id) {
-        jdbcTemplate.update("DELETE FROM article WHERE id=?", id);
-        return 1;
+        return jdbcTemplate.update("DELETE FROM article WHERE id=?", id);
     }
 }

@@ -15,7 +15,8 @@ public class ArticleController {
 
     @GetMapping("")
     public ResponseEntity<List<Article>> GetArticles(){
-        return new ResponseEntity<>(articleRepository.getAll(), HttpStatus.OK); }
+        return new ResponseEntity<>(articleRepository.getAll(), HttpStatus.OK);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Article> GetArticleById(@PathVariable("id") int id){
@@ -52,7 +53,7 @@ public class ArticleController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable("id") int id){
-        articleRepository.delete(id);
-        return new ResponseEntity<>("Success", HttpStatus.OK);
+        String response = String.format("Records removed %d",articleRepository.delete(id));
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
